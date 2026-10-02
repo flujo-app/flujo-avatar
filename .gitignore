@@ -1,2 +1,6 @@
 .dependency-reference/
 flujo/
+node_modules/
+.env
+*.env
+artifacts/

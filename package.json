@@ -1,0 +1,17 @@
+{
+  "name": "@flujo-ai/avatar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable eyes and native conversation adapter for Flujo",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "tsx --test tests/*.test.mjs tests/*.test.ts",
+    "sync:flujo": "node scripts/sync-flujo.mjs"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
+  }
+}
