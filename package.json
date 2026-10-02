@@ -4,14 +4,34 @@
   "private": true,
   "type": "module",
   "description": "Portable eyes and native conversation adapter for Flujo",
+  "files": ["dist", "README.md", "NOTICE.md", "BRAIN_ONLINE_HANDOFF.md"],
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./eyes": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./factory": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./styles.css": { "types": "./dist/styles.css.d.ts", "default": "./dist/index.css" }
+  },
+  "peerDependencies": { "react": "^18.3.1 || ^19.0.0" },
   "engines": {
     "node": ">=22"
   },
   "scripts": {
-    "test": "tsx --test tests/*.test.mjs tests/*.test.ts",
+    "build": "node scripts/build.mjs && tsc -p tsconfig.package.json",
+    "test": "npm run build && tsx --test tests/*.test.mjs tests/*.test.ts",
+    "example": "vite examples/factory --host 127.0.0.1 --port 43946 --strictPort",
+    "example:build": "vite build examples/factory",
+    "example:typecheck": "tsc --noEmit -p tsconfig.example.json",
+    "prepare": "npm run build",
     "sync:flujo": "node scripts/sync-flujo.mjs"
   },
   "devDependencies": {
-    "tsx": "^4.23.15"
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.28.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2"
   }
 }

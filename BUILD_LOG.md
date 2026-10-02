@@ -36,4 +36,14 @@ Public repository: https://github.com/flujo-app/flujo-avatar. Flujo branch: `cod
 - The avatar's selected Codex model used actual Flujo tools to list the bundled FLUJO flow and four connected shipped apps. No configuration was changed by that read-only task.
 - Added public cached Codex model hints as unverified options, resource objects/previews, canonical-result narration receipts, correct panel parameters, editor navigation guards and language synchronization. These follow-up UI changes are being browser-tested.
 - A live artifact request revealed that Flujo requires a produce-role resource edge before exposing `write_resource`. New avatar quick chats now request the named `world-result` output through the existing FlowSpec compiler. Ordinary quick chats and existing conversations keep their graph unchanged. The focused current-base backend union passed 65 tests.
-- Remaining: operational Flow/Persona identity selection, broader automation/meeting/package/App journeys, human microphone acceptance and final end-to-end recovery/resource checks. The goal remains active.
+- Live resource acceptance passed: Codex wrote `world-result`, the archive gained an object, the preview contained the exact saved text, reload preserved it, and OpenRouter narrated the canonical backend result without microphone access.
+- Live operational identity acceptance passed using disposable entities in the isolated preview: a saved Flow answered with its own binding; a Persona's trusted dispatcher answered with its own stored memory. Persona-owned helper flows retain inspection but cannot be selected as ordinary agents. A second workspace had no work-model preference, artifacts or test identities from the first.
+- The current production build and lint passed. Ten frontend tests cover identity and recovery; a separate backend snapshot test covers Persona ownership. The transcript no longer blocks map landmarks; the real embedded conversation opened in Spanish.
+- Remaining: broader automation/meeting/package/App journeys, human microphone acceptance and live steering/cancellation/approval recovery. The goal remains active.
+
+## Brain / FACTORY supporting package
+
+- Moe's direct coordination instruction was verified in the Brain owner's chat before reporting back. The durable handoff was accepted by that owner.
+- Added an explicit ESM/CSS/declaration export boundary, React 18/19 peers and a pure `FactoryAvatar` with host observation/inspection props. It never polls, sends voice or dispatches work. Browser examples are always labeled sample data.
+- All 37 package/native tests passed. React 18.3.1 and 19.2.8 Vite consumers built and ran without console errors. Keyboard inspection, ES/PT/EN, equal-revision heartbeat presentation, unavailable/stale states and reduced-motion CSS were checked in the browser.
+- Brain and FACTORY code were read for the contract; their worktrees were not edited. Brain's owner integrates the exported package separately. Read-only observation does not authorize customer tenancy, execution commands or paid narration.
