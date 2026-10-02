@@ -6,8 +6,8 @@
 
 | Workstream | Source / revision | Review |
 | --- | --- | --- |
-| Portable avatar | [flujo-app/flujo-avatar](https://github.com/flujo-app/flujo-avatar), `34fd967` | Public main; eyes, capture/playback and heard-response ledger |
-| Flujo host integration | [mario-andreschak/FLUJO](https://github.com/mario-andreschak/FLUJO), `ac5ee9a1`, `codex/avatar-world` | [Draft PR #560](https://github.com/mario-andreschak/FLUJO/pull/560) |
+| Portable avatar | [flujo-app/flujo-avatar](https://github.com/flujo-app/flujo-avatar), `c2e7c4671a0e24af9879e59279f1309974c559cb` | Public main; compiled read-only presentation package plus repository-native audio source |
+| Flujo host integration | [mario-andreschak/FLUJO](https://github.com/mario-andreschak/FLUJO), `5ff09da6`, `codex/avatar-world` | [Draft PR #560](https://github.com/mario-andreschak/FLUJO/pull/560) |
 | Brain host | [flujo-app/brain-online](https://github.com/flujo-app/brain-online), `9cbc8f961e86ab8301ecdb40869325ff9ec7107f` | [PR #34](https://github.com/flujo-app/brain-online/pull/34) |
 | FACTORY | Local checkout `C:/Users/Moe/Documents/ChatGPT/FACTORY`, HEAD `8d8e58f7fae96bc2eec05cbc3685368e1228acfe` | No `origin` remote is configured; running presentation build has a separate identity |
 
@@ -15,7 +15,7 @@ Contracts read: FACTORY's `BRAIN_ONLINE_INTEGRATION.md`; Brain's `docs/FACTORY_I
 
 ## What is reusable now
 
-These are actual **source-file exports**. `package.json` is private and currently has no npm `exports`, compiled distribution, peer dependencies or public registry release. A package-name import is not ready yet.
+The initial audit at `34fd967` found source-file exports without npm exports, compiled distribution or peers. The delivered checkpoint below closes that presentation-package gap. Native voice remains repository source, with no exported FACTORY host resolver or public registry release.
 
 ```ts
 // src/client/Eyes.tsx: default React component
@@ -26,7 +26,7 @@ type EyesProps = { phase: EyePhase; avatar: AvatarStyle; small?: boolean };
 // Also requires the sibling eyes.module.css.
 ```
 
-The eyes use React hooks available in React 18 and 19, CSS modules and pointer events. They have no Flujo state or API dependency. CSS disables gaze/animation under reduced motion. The host supplies accessible status text because the eyes are decorative (`aria-hidden`). React 18/Vite acceptance has not yet been run.
+The eyes use React hooks available in React 18 and 19, CSS modules and pointer events. They have no Flujo state or API dependency. CSS disables gaze/animation under reduced motion. The host supplies accessible status text because the eyes are decorative (`aria-hidden`). React 18/19 Vite acceptance passed at the delivered checkpoint.
 
 The native adapter exports `useNativeRouterVoice`, `voiceHeaders`, `NativeRouterPlayback`, `NativeTurnProtocol`, `readNativeTurn`, `createNativeTurns` and `streamNativeTurn`. Playback and ledger are generic; the hook's URLs are currently `/api/avatar/native-*` and its capture worklet is `/avatar-audio-capture.js`. Its session header is `x-flujo-avatar-client`. The Flujo host resolves the current workspace and canonical conversation/message result before issuing a single-use narration receipt. Those URLs and Flujo's result resolver must not be copied as a FACTORY command contract.
 
@@ -46,7 +46,7 @@ Keep Brain's existing sanitized BFF, validator, poller, constellation, selection
 
 The first bridge can summarize **inspected canonical state in text** without a model call. A verified task can say “FACTORY reports task X as verified at revision R”; it cannot claim publication, physical worker activity or mission completion from that status alone. Render evidence hashes as evidence references; downloading private artifacts needs its own authorized resolver.
 
-Proposed package exports for the first implementation (not shipped yet):
+The reviewed interface below is now implemented in the compiled package:
 
 ```ts
 // @flujo-ai/avatar/eyes: existing component/types above
@@ -105,4 +105,45 @@ Do not read the private FACTORY credential in an avatar frontend, expose raw con
 3. Verify React 18/Vite import, keyboard inspection, reduced motion, preview labeling, stale/unavailable behavior, equal-revision heartbeat refresh and no current-activity claim from read timestamps.
 4. Keep voice/commands disabled. Review the bounded server narration contract separately when FACTORY/Brain owners provide authority and admission.
 
-Current Flujo evidence: 33 portable tests, 65 focused backend tests, 10 frontend tests after identity coverage, and a successful production build before the final identity/layout follow-up. Browser checks passed bootstrap Spanish audio before a work AI existed, real Codex model/tool verification, Flujo tool execution, `write_resource`, artifact preview/reload, canonical-result audio without microphone access, and embedded Spanish conversation inspection. Flow/Persona identity and final layout changes are being built/tested in the isolated Flujo worktree. Human microphone quality is not claimed.
+Current Flujo evidence: 33 native tests, 65 focused backend tests plus the ownership snapshot regression, 10 frontend tests, lint and the final production build. Browser checks passed bootstrap Spanish audio, real Codex verification/work, `write_resource`, artifact preview/reload, canonical-result audio, and embedded Spanish conversation inspection. A saved Flow answered through its binding; a Persona returned the exact fact stored in its memory. A second workspace contained none of those entities, artifacts or work preference. Persona-owned helper flows retain inspection but do not expose a direct Talk action. Human microphone quality is not claimed.
+
+## Delivered package and runnable consumer
+
+Implementation commit: **`c2e7c4671a0e24af9879e59279f1309974c559cb`**. Compiled entry points: `@flujo-ai/avatar`, `@flujo-ai/avatar/eyes`, `@flujo-ai/avatar/factory` (named exports), and `@flujo-ai/avatar/styles.css` (explicit side-effect CSS import with its own declaration). ESM and TypeScript declarations are built into `dist`; React is external with peer range `^18.3.1 || ^19.0.0`. No native voice module is pulled into this presentation entry. The package remains private to npm; installation can use the pinned public Git source:
+
+```sh
+npm install git+https://github.com/flujo-app/flujo-avatar.git#c2e7c4671a0e24af9879e59279f1309974c559cb
+```
+
+Git installation builds the distribution with `prepare`. The pack dry-run confirmed ESM, CSS and declarations, without preview data, credentials, node_modules or Flujo's checkout. In the React host:
+
+```tsx
+import { FactoryAvatar, type FactoryAvatarProps } from '@flujo-ai/avatar/factory';
+import '@flujo-ai/avatar/styles.css';
+
+export function FactoryCompanion(props: Pick<FactoryAvatarProps, 'observation' | 'onInspect'>) {
+  return <FactoryAvatar {...props} avatar="moss" locale="es" />;
+}
+```
+
+Pass the already validated host observation and existing inspection handler. The component renders canonical text directly, updates from new props even at equal revisions, hides old evidence on unavailable observations and never acquires a backend connection. It does not infer a working/thinking phase from a read time, task status or cell readiness. Stale/unavailable views stop animation; reduced motion removes animation and gaze transforms. Task/cell inspection buttons are native keyboard controls.
+
+Runnable source example: `examples/factory/main.tsx`. From this repository:
+
+```sh
+npm ci
+npm test
+npm run example:typecheck
+npm run example:build
+npm run example
+```
+
+Open `http://127.0.0.1:43946/`. The example self-imports the real package exports and keeps a sample-data notice in every mode. An installed React 19 project can be used without changing its dependencies:
+
+```sh
+node scripts/check-react19.mjs <installed-react19-project> --serve
+```
+
+That creates an ignored production consumer and serves it at `http://127.0.0.1:43947/`. In this workspace the React 19 source was the isolated Flujo checkout; its dependency files were only read. Both React 18.3.1 and 19.2.8 Vite consumers built and rendered successfully, with keyboard inspection and no console errors. Browser verification also covered ES/PT/EN, persistent fixture labeling, equal-revision heartbeat replacement, stale/unavailable states and emulated reduced motion (restored after testing). All **37** package/native tests, package declarations, example typecheck and consumer build passed.
+
+This bounded subworker delivery is ready for Brain's owner to integrate. Brain/FACTORY files were not modified, no factory credentials were accessed, no voice request or work command was added, and their existing BFF/validation/activity authority remains with those owners.
