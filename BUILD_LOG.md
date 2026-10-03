@@ -20,7 +20,7 @@ Active goal: build the vision in VISION.md against the audited Flujo capabilitie
 - [x] Personas, automations, meetings, packages and advanced capability access through existing runtimes.
 - [x] Spanish/Portuguese controls, keyboard/text, reduced motion, and workspace isolation.
 - [x] Type checks, focused regression tests, production build, and live browser acceptance without microphone recording.
-- [ ] Human microphone trial for recognition, pacing, interruption and ES/PT speech quality.
+- [ ] Human microphone trial for recognition, pacing, interruption and English speech quality, with ES/PT quality when selected.
 
 The goal remains active until these journeys are built and verified. A mock scene or partial prototype does not satisfy completion.
 
@@ -57,6 +57,14 @@ Public repository: https://github.com/flujo-app/flujo-avatar. Flujo branch: `cod
 - The world projects bounded entities from the real workspace services. Guide links and Apply reuse the trusted panel boundary; persistent Apps retain the global host. Live journey evidence above covers setup, actual work, resources, identity, recovery, advanced controls and accessibility.
 - All 17 portable source files match both the synchronized Flujo copies and their recorded SHA-256 provenance. The preview listeners use the own isolated data root and the separate App sandbox port. Both Git repositories were clean at audit start.
 - On the current Flujo head, GitHub passed type checking (including the API inventory), lint, Linux production build, both release-safety checks and isolated tests. The Windows build and full test job were confirmed live and remain pending at this checkpoint. Human microphone acceptance also remains pending; the goal is not complete.
+
+## English as the primary language
+
+- The user made English the primary language. The world, panel bridge and native voice use English by default; Spanish and Brazilian Portuguese remain explicit choices. Existing workspace language preferences are respected.
+- Native requests without a locale now use English instructions and English setup facts. English stream failure feedback no longer falls through to Spanish. Portable sources were synchronized into Flujo with updated provenance.
+- All 39 package/adapter tests and 22 avatar backend tests passed, along with the full repository type check, focused lint and the production build. New regressions cover default-English provider instructions, localized stream failures and the setup labels in omitted/EN/ES/PT requests.
+- A production browser opening in the unconfigured `avatar-isolation` workspace selected English without a manual language change. OpenRouter returned English setup guidance without a work model or microphone recording. The setup panel offered Codex, Claude and other AI paths in English. A deliberate Portuguese choice survived reload; the review preview was then restored to English. Captures are `artifacts/flujo-avatar-english-opening.png`, `artifacts/flujo-avatar-english-bootstrap.png` and `artifacts/flujo-avatar-english-setup.png`.
+- English implementation commit `f825048e` is pushed to Flujo PR #560. Human microphone acceptance remains pending. GitHub checks from an earlier head do not certify this language change; the updated Flujo commit receives its own verification run.
 
 ## Brain / FACTORY supporting package
 

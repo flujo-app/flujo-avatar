@@ -35,6 +35,21 @@ test('transport stays native and excludes work tools, browser results, keys and 
     return provider([speech(), expiry(), usage(), '[DONE]']);
   } });
 });
+test('voice requests without a locale use English throughout the provider request', async () => {
+  const input = { message: 'Help me connect my AI.', avatar: 'moss' };
+  await run([], { value: input, fetch: (_url, options) => {
+    const body = JSON.parse(options.body);
+    assert.match(body.messages[0].content, /Speak natural, clear English/);
+    return provider([speech(), expiry(), usage(), '[DONE]']);
+  } });
+});
+test('stream failure feedback follows English, Spanish and Portuguese explicitly', async () => {
+  for (const [locale, expected] of [['en', /The voice response could not be completed/], ['es', /La respuesta de voz no se pudo completar/], ['pt', /A resposta de voz não pôde ser concluída/]]) {
+    const failed = await run([speech(), usage(), '[DONE]'], { value: { ...value, locale } });
+    assert.equal(failed.result.completed, false);
+    assert.match(failed.output.at(-1).error, expected);
+  }
+});
 test('server-provided setup facts and results remain bounded quoted data in every locale', async () => {
   for (const locale of ['es', 'pt', 'en']) {
     await run([], { value: { ...value, locale }, context: { setupFacts: '{"workAI":null}', backendResult: { reply: 'Recorded reply', mode: 'flujo', status: 'completed' } },

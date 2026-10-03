@@ -8,7 +8,7 @@ The eyes can talk before Flujo has a configured model because our OpenRouter con
 
 ## What the user experiences
 
-“Hola. Voy a revisar qué IA puedes usar aquí.” A short inspection runs on **the machine hosting Flujo**, while the eyes stay attentive. The scene presents a few useful choices rather than a provider questionnaire.
+“Hi. I’ll check which AI you can use here.” English is the default; Spanish and Portuguese remain selectable. A short inspection runs on **the machine hosting Flujo**, while the eyes stay attentive. The scene presents a few useful choices rather than a provider questionnaire.
 
 Examples, contingent on actual detection:
 

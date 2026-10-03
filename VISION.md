@@ -12,6 +12,8 @@ Implementation status: the optional `/world` experience is now built in [Flujo P
 
 **The eyes are the guide.** They have a voice immediately through our conversation service. They notice, listen, ask short questions, show where to act, and remain recognizable across the world. They are there before the user has a model configured.
 
+English is the primary language for the interface and conversation. Spanish and Brazilian Portuguese remain available as deliberate user choices.
+
 **The user's AI does the thinking and work.** Most users should be able to start with their existing Codex or Claude subscription. Detect candidates and offer usable options first; API and local-model paths remain available. That connection does not need native voice support.
 
 **Flujo's existing agents and Personas do the execution.** A saved Flow agent can appear as a character. A persistent Persona can become a resident with its real mission, memory, goals, behaviors, and apps. The visual identity does not create another task or memory runtime.
@@ -20,11 +22,11 @@ Implementation status: the optional `/world` experience is now built in [Flujo P
 
 ## First five minutes
 
-1. **Awaken.** Black screen; two white eyes blink and attend to the user. A gesture begins conversation/microphone admission. Text is available immediately. “Hola. Vamos a ver qué IA puedes usar aquí.”
+1. **Awaken.** Black screen; two white eyes blink and attend to the user. A gesture begins conversation/microphone admission. Text is available immediately. “Hi. Let’s see which AI you can use here.”
 2. **Discover.** The shell inspects saved connections and supported runtime/login metadata on the Flujo host. It offers detected Codex/Claude candidates, local models, and other AI connections. “Codex detected” and “verified for Flujo” remain distinct.
 3. **Connect.** The user chooses an option. Existing AI Setup controls appear within the scene for login/token/key entry or model selection. Our voice explains the process using safe setup facts. In the current adapters, Codex can reuse compatible file-backed login; Claude uses its saved OAuth token.
 4. **Verify.** Reuse Flujo's model test, including its production diagnostic tool round-trip. Resolve a valid model binding for the bundled FLUJO agent or an existing quick-chat/copilot path. A saved model alone does not count as work readiness.
-5. **Begin.** The first stretch of the world appears. “¿Qué quieres hacer?” The selected Flujo model uses real capability discovery, authoring, and tools to help. The user should not have to recreate the shipped browser, filesystem, bash, and Flujo connections.
+5. **Begin.** The first stretch of the world appears. “What would you like to do?” The selected Flujo model uses real capability discovery, authoring, and tools to help. The user should not have to recreate the shipped browser, filesystem, bash, and Flujo connections.
 6. **Leave a result.** A real response or artifact appears. Its place/object stays associated with the workspace and can be revisited. Setup failure keeps the eyes, guidance, and editable draft available.
 
 The work-model choice becomes the preferred connection for new avatar-initiated work in that workspace. Existing authored bindings win. Advanced flows can keep multiple models; subscription setup should not flatten Flujo's composition capabilities.
@@ -133,7 +135,7 @@ Only bounded context and presentation facts should go to our voice service. Prov
 
 The first integration should prove one verified subscription path and its actual work result, while retaining explicit alternatives. The detector must handle both Codex and Claude correctly; this does not require implementing two new work engines.
 
-Acceptance includes: voice before a work connection; truthful candidate detection on the Flujo host; both-subscription choice; failed login/test recovery; real model/tool verification; reuse of existing capabilities; no overwritten authored bindings; accurate task identity/results; speech interruption versus work steering/cancellation; reconnect without duplicate execution; workspace isolation; text/keyboard/reduced motion; natural Spanish and Brazilian Portuguese behavior.
+Acceptance includes: voice before a work connection; truthful candidate detection on the Flujo host; both-subscription choice; failed login/test recovery; real model/tool verification; reuse of existing capabilities; no overwritten authored bindings; accurate task identity/results; speech interruption versus work steering/cancellation; reconnect without duplicate execution; workspace isolation; text/keyboard/reduced motion; English as the primary language, with natural Spanish and Brazilian Portuguese behavior when selected.
 
 Use bounded built/static previews for design review. The POC previously had a runaway development watcher; its paused stack does not need to be restarted to plan this integration.
 
