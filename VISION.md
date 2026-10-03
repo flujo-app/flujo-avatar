@@ -8,6 +8,10 @@ This proposal follows [the capability audit](FLUJO_CAPABILITIES.md) and [the con
 
 Implementation status: the optional `/world` experience is now built in [Flujo PR #560](https://github.com/mario-andreschak/FLUJO/pull/560). This document preserves the original vision and its acceptance scope. Current implementation and runtime evidence are recorded in [the build log](BUILD_LOG.md); human microphone acceptance remains pending.
 
+The human review selected a **playful, physical world the eyes can move through**. The implementation now uses small sculpted places, layered terrain, river reflections and plants that grow from saved capability counts. The eyes travel to the selected place; precise controls appear when needed. Most controls and the complete transcript stay behind deliberate actions, leaving the character and world central.
+
+The review also found repetitive setup advice, stale model suggestions and excessive speech during work. Work audio now takes one recognition-to-Flujo path. Our conversation service gives a brief presentation of the resulting backend outcome, using fresh server facts and omitting the old setup conversation. Setup offers subscription candidates and dated hints without choosing a model for the user. Existing authored agents keep their own bindings.
+
 ## The core experience
 
 **The eyes are the guide.** They have a voice immediately through our conversation service. They notice, listen, ask short questions, show where to act, and remain recognizable across the world. They are there before the user has a model configured.
