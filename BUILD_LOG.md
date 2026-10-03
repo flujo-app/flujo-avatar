@@ -15,11 +15,12 @@ Active goal: build the vision in VISION.md against the audited Flujo capabilitie
 - [x] Real setup and model/tool verification; workspace default for new work without overwriting authored bindings.
 - [x] Black/white eyes; interactive world driven by actual Flujo state.
 - [x] Bootstrap OpenRouter conversation service before a work model exists.
-- [ ] Actual Flow work, steering, cancellation, approvals, resources, and reload reconciliation.
-- [ ] Real embedded Flujo controls and persistent MCP Apps.
-- [ ] Personas, automations, meetings, packages and advanced capability access through existing runtimes.
-- [ ] Spanish/Portuguese, keyboard/text, reduced motion, and workspace isolation.
-- [ ] Type checks, focused regression tests, production build, and live browser acceptance.
+- [x] Actual Flow work, steering, cancellation, approvals, resources, and reload reconciliation.
+- [x] Real embedded Flujo controls and persistent MCP Apps.
+- [x] Personas, automations, meetings, packages and advanced capability access through existing runtimes.
+- [x] Spanish/Portuguese controls, keyboard/text, reduced motion, and workspace isolation.
+- [x] Type checks, focused regression tests, production build, and live browser acceptance without microphone recording.
+- [ ] Human microphone trial for recognition, pacing, interruption and ES/PT speech quality.
 
 The goal remains active until these journeys are built and verified. A mock scene or partial prototype does not satisfy completion.
 
@@ -39,7 +40,13 @@ Public repository: https://github.com/flujo-app/flujo-avatar. Flujo branch: `cod
 - Live resource acceptance passed: Codex wrote `world-result`, the archive gained an object, the preview contained the exact saved text, reload preserved it, and OpenRouter narrated the canonical backend result without microphone access.
 - Live operational identity acceptance passed using disposable entities in the isolated preview: a saved Flow answered with its own binding; a Persona's trusted dispatcher answered with its own stored memory. Persona-owned helper flows retain inspection but cannot be selected as ordinary agents. A second workspace had no work-model preference, artifacts or test identities from the first.
 - The current production build and lint passed. Ten frontend tests cover identity and recovery; a separate backend snapshot test covers Persona ownership. The transcript no longer blocks map landmarks; the real embedded conversation opened in Spanish.
-- Remaining: broader automation/meeting/package/App journeys, human microphone acceptance and live steering/cancellation/approval recovery. The goal remains active.
+- A later production build and lint passed with 18 frontend tests. Live steering reached the same pending completion and was consumed without another run; cancellation persisted its cancelled classification through reload. The real embedded tool approval was rejected without execution, then another approval survived reload and resumed the requested read when accepted. The saved approval preference is forwarded in avatar requests. Delivery failures preserve the draft; accepted work failures keep the canonical conversation. Pending subscription approval survives running transcript refreshes.
+- Advanced live checks: a one-round meeting with a saved Flow and a Persona completed with both contributions, through the real embedded meeting UI. A disabled scheduled execution ran once through its real Run now button and persisted its result; it stays disabled. These are disposable test entities in the isolated preview data.
+- The default MCP sandbox port was occupied by another Flujo process, so this preview uses `FLUJO_MCP_APP_SANDBOX_PORT=43948`. The other process was untouched. The Apps place now exposes the existing persistent Quick Actions launcher. Its real terminal App ran a harmless command and retained the session/output while the embedded Packages surface opened. The world honors the host's dock reservations, leaving the composer usable.
+- Package creation through the real embedded wizard resolved the witness Flow's model dependency, passed its secret review and built a local manifest. No registry publication occurred. Installed packages now project only name/version from the existing workspace install ledger; three snapshot tests cover ownership, bounds and partial failure. A built local manifest is not presented as an installed package.
+- World ES/PT/EN labels, keyboard Escape/focus recovery and reduced-motion styles passed browser checks. A 390px check found overlapping resident/settings landmarks and an overflowing resident header. The landmarks are now separate; the header presents the active identity and retains visible language/world controls. The guide's work preference is shown only while addressing the guide; Springs remains the setup entry for other identities.
+- The final production build, TypeScript and lint passed. The final 390px resident check passed; viewport and reduced-motion overrides were restored. Saved review views in the ignored `artifacts/` directory show the world, mobile identity, local package build and App session retained while the Packages panel opened.
+- Remaining: human microphone acceptance. The goal remains active; the optional `/world` route and draft PR are ready for that review. Existing embedded pages retain their own translation coverage; this does not claim every Flujo label or spoken response has been language-reviewed.
 
 ## Brain / FACTORY supporting package
 
@@ -47,3 +54,5 @@ Public repository: https://github.com/flujo-app/flujo-avatar. Flujo branch: `cod
 - Added an explicit ESM/CSS/declaration export boundary, React 18/19 peers and a pure `FactoryAvatar` with host observation/inspection props. It never polls, sends voice or dispatches work. Browser examples are always labeled sample data.
 - All 37 package/native tests passed. React 18.3.1 and 19.2.8 Vite consumers built and ran without console errors. Keyboard inspection, ES/PT/EN, equal-revision heartbeat presentation, unavailable/stale states and reduced-motion CSS were checked in the browser.
 - Brain and FACTORY code were read for the contract; their worktrees were not edited. Brain's owner integrates the exported package separately. Read-only observation does not authorize customer tenancy, execution commands or paid narration.
+- Brain's owner subsequently accepted the package and reported integration at `0a32fbb6fb98159ec62c06c4e59f214672a03618` in [PR #34](https://github.com/flujo-app/brain-online/pull/34). That report covers the pinned package, stylesheet, host-owned polling, local inspection, three languages and a 390px browser check. This is owner-reported integration evidence, separate from the package checks performed here.
+- The owner later reported authorization-loss cleanup at `b811bbd2dd8f7682e9c5598845c8f23a84badf1d`: the host clears evidence after 401/403/404 and identity changes. The pinned avatar package is unchanged. Its 28 combined checks and rebuilt Linux image are owner-reported evidence.
