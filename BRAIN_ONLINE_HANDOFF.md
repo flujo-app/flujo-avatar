@@ -182,4 +182,14 @@ Compiled SHA-256 values at the exact pin:
 | dist/index.css | 5fb6bb0140180a70988f96368e1327283b6ad5725d61100f9eb621bcb7a38643 |
 | dist/factory/FactoryAvatar.d.ts | b379d5dea57c94ad53b752542f51920c2fb36a4ccf4fdf0d218f9194012976e6 |
 
-The local machine-readable record is `artifacts/factory-terminal-qualification.json` (ignored review evidence). Brain's owner independently qualifies the installed App/shared-schema/BFF/avatar reader and updates PR #34 before FACTORY writes either terminal value live. Package checks here do not qualify that live host. No Brain/FACTORY files, controller state, deployment or production configuration were modified.
+The local machine-readable record is `artifacts/factory-terminal-qualification.json` (ignored review evidence). Package checks here do not qualify the live host. No Brain/FACTORY files, controller state, deployment or production configuration were modified.
+
+### Brain owner acceptance of the terminal-status pin
+
+Brain's owner accepted and adopted `f52e16cfcdb98e374b2210a0e7e6efe4031d13a5` at exact Brain source `8205fbcad467bdb27d952d30e4ae3e5ca11f02aa`, pushed on `codex/factory-visuals` in [PR #34](https://github.com/flujo-app/brain-online/pull/34). The owner independently checked the direct `c2e7c4` parent, three-file diff, runtime export allowlist and explicit HTTPS installation.
+
+The owner reported **41 combined checks passing on Windows and the unmodified final Linux Docker build**, including the installed avatar projection/captions in EN/ES/PT and mounted operator behavior retaining history without inflating active work or delivered software. Type checks and the dashboard production build passed. Installed avatar ESM/CSS/Factory declarations matched byte for byte across Windows/Linux, with matching shared contract and BFF runtime.
+
+The browser initially retained stale Vite optimization from the old package despite installation and type-check success. Restarting only the owner's preview with `--force` cleared it. The new operation/cancellation captions then rendered correctly in all three languages, with retained candidate/review hashes and no overflow at 390px. No package change was needed.
+
+These are independently reported host checks by Brain's owner, not checks performed in this workspace. The owner sent the evidence to FACTORY and kept controlled-fixture qualification separate from the existing-state API witness. Replacement API and other reader qualification remain FACTORY's live-adoption gates. No merge, deployment or provider commands were performed in that handoff.
