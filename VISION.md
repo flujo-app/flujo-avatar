@@ -6,6 +6,8 @@ Flujo keeps its backend, APIs, UI, models, tools, flows, automations, and persis
 
 This proposal follows [the capability audit](FLUJO_CAPABILITIES.md) and [the connection discovery plan](CONNECTION_DISCOVERY.md). Those documents distinguish current capabilities from missing integration work.
 
+Implementation status: the optional `/world` experience is now built in [Flujo PR #560](https://github.com/mario-andreschak/FLUJO/pull/560). This document preserves the original vision and its acceptance scope. Current implementation and runtime evidence are recorded in [the build log](BUILD_LOG.md); human microphone acceptance remains pending.
+
 ## The core experience
 
 **The eyes are the guide.** They have a voice immediately through our conversation service. They notice, listen, ask short questions, show where to act, and remain recognizable across the world. They are there before the user has a model configured.
@@ -144,4 +146,4 @@ Use bounded built/static previews for design review. The POC previously had a ru
 
 These are decisions to evaluate against the audited capabilities, not prerequisites for finishing the planning artifacts.
 
-These are planning artifacts for review. Flujo/POC code, subscriptions, credentials, and backend configuration remain unchanged.
+The original POC remains intact. Implementation proceeds in the isolated Flujo worktree and this public avatar repository; the original Flujo checkout's pre-existing changes are preserved. Default-interface rollout, hosted-service admission/billing and retention remain product decisions.

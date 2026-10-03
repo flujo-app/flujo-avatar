@@ -6,6 +6,8 @@ Flujo is an agent workspace, configuration copilot, automation engine, MCP host,
 
 This audit examines a local Flujo working tree, main HEAD `15d019f7b952b2f2d3aea1197722ac8d9f520d7c`. That tree has pre-existing modifications, including execution events, conversation steering, MCP UI, OAuth, and package-transfer code. Findings describe the inspected local source, including those modifications. Source links point to the audit base commit; local differences are not published evidence. They do not certify a published release, deployment, provider account, or runtime test.
 
+This is the baseline audit before implementation. The avatar integration was subsequently built on Flujo 3.46.2 in an isolated worktree and is published in [draft PR #560](https://github.com/mario-andreschak/FLUJO/pull/560). Refer to [the build log](BUILD_LOG.md) for implementation and runtime evidence; baseline statements about missing avatar integration are historical.
+
 ## 1. What a fresh installation already contains
 
 An unconfigured installation has no usable work model, but it already has useful infrastructure:

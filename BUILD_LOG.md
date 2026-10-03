@@ -51,6 +51,13 @@ Public repository: https://github.com/flujo-app/flujo-avatar. Flujo branch: `cod
 - Production browser acceptance passed for a real guide-generated highlight: it survived reload, applied to the original model form and reopened the panel so the highlighted field was visible. The same saved proposal was rejected after changing the panel to automations. No form values were changed or saved. The final production build passed; implementation commit `661dacb5` is pushed to Flujo PR #560. Review captures are `artifacts/flujo-avatar-guide-navigation.png`, `artifacts/flujo-avatar-proposal-recovery.png` and `artifacts/flujo-avatar-proposal-scope-rejection.png`. GitHub verification on this commit was started; it is not yet claimed as passed.
 - Remaining: human microphone acceptance. The goal remains active; the optional `/world` route and draft PR are ready for that review. Existing embedded pages retain their own translation coverage; this does not claim every Flujo label or spoken response has been language-reviewed.
 
+## Completion audit at `661dacb5`
+
+- Current source preserves the independent bootstrap voice service, verified workspace work-model preference, authored Flow/Persona ownership, canonical narration receipts and the existing Flujo execution/control runtimes. Passive discovery offers both subscription paths, with Claude token entry remaining explicit. The source audit found no new execution engine or credential import.
+- The world projects bounded entities from the real workspace services. Guide links and Apply reuse the trusted panel boundary; persistent Apps retain the global host. Live journey evidence above covers setup, actual work, resources, identity, recovery, advanced controls and accessibility.
+- All 17 portable source files match both the synchronized Flujo copies and their recorded SHA-256 provenance. The preview listeners use the own isolated data root and the separate App sandbox port. Both Git repositories were clean at audit start.
+- On the current Flujo head, GitHub passed type checking (including the API inventory), lint, Linux production build, both release-safety checks and isolated tests. The Windows build and full test job were confirmed live and remain pending at this checkpoint. Human microphone acceptance also remains pending; the goal is not complete.
+
 ## Brain / FACTORY supporting package
 
 - Moe's direct coordination instruction was verified in the Brain owner's chat before reporting back. The durable handoff was accepted by that owner.

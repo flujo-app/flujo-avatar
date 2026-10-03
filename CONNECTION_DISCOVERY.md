@@ -2,6 +2,8 @@
 
 2 October 2026 · proposed generic Flujo capability
 
+Implementation status: passive discovery and verified workspace work-model selection now exist in [Flujo PR #560](https://github.com/mario-andreschak/FLUJO/pull/560), through `/api/avatar/connections` and `/api/avatar/work-model`. The schema below preserves the original design proposal; see the [implementation types](https://github.com/mario-andreschak/FLUJO/blob/661dacb57e3c63833fc87fc70239eb8ebce64481/src/shared/types/avatar.ts) and [recorded acceptance](BUILD_LOG.md) for the current integration.
+
 The eyes can talk before Flujo has a configured model because our OpenRouter conversation service is available immediately. The first task is to discover the user's existing thinking/work options, especially Codex and Claude subscriptions. Native voice support is never a requirement for a work connection.
 
 ## What the user experiences
@@ -98,4 +100,4 @@ A narrow shell setup step can bind the chosen model to an unbound bundled FLUJO 
 | Existing agent already has authored model | Preserve it unless the user requests replacement |
 | Public/remote deployment | Preserve exposure/auth boundaries and identify the host |
 
-Detailed source evidence is in [the capability audit](FLUJO_CAPABILITIES.md). This document is a plan; no new detection endpoint, credential import, installer action, or live model test was performed.
+Detailed baseline source evidence is in [the capability audit](FLUJO_CAPABILITIES.md). Subsequent implementation verified a real Codex model/tool path and failed-model recovery in the isolated preview. Claude remains an explicit token-connection choice using Flujo's existing adapter; no automatic import of personal Claude credentials was added. Current evidence and remaining acceptance are recorded in [the build log](BUILD_LOG.md).
