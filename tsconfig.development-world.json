@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx",
+    "strict": true, "skipLibCheck": true, "noEmit": true, "lib": ["ES2022", "DOM"],
+    "paths": {
+      "@flujo-world/*": ["./.dependency-reference/development-scene/src/frontend/components/AvatarWorld/*"],
+      "@/shared/types/avatar": ["./.dependency-reference/development-scene/src/shared/types/avatar.ts"],
+      "@/vendor/avatar/client/Eyes": ["./src/client/Eyes.tsx"]
+    }
+  },
+  "include": ["examples/development-world/main.tsx", "examples/development-world/css.d.ts", "src/css.d.ts"]
+}
