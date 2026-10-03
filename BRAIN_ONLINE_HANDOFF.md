@@ -153,3 +153,33 @@ This bounded subworker delivery is ready for Brain's owner to integrate. Brain/F
 Brain's owner accepted the delivery and reported integration at `0a32fbb6fb98159ec62c06c4e59f214672a03618` in [Brain PR #34](https://github.com/flujo-app/brain-online/pull/34). The host retains its polling and validation, maps local inspection into its existing evidence surface, and imports the package and stylesheet at the pinned implementation commit above. The owner reported its Windows/Linux checks, successful Linux build and 390px browser inspection. This is the owner's integration evidence; Brain and FACTORY remain separately owned.
 
 The owner subsequently reported host authorization-loss cleanup at `b811bbd2dd8f7682e9c5598845c8f23a84badf1d` in the same PR: snapshots/selection clear after 401/403/404, identity changes reset the view, and late profile/read results are rejected. The package/interface above remain unchanged. The owner reported nine mounted transition regressions and 28 combined checks in the rebuilt Linux image; those checks were not performed in this workspace.
+
+## Qualified terminal-status compatibility pin — 3 October 2026
+
+Brain requested additive support for `completed` and `cancelled` while FACTORY qualifies terminal task closure. The focused implementation is **[`f52e16cfcdb98e374b2210a0e7e6efe4031d13a5`](https://github.com/flujo-app/flujo-avatar/commit/f52e16cfcdb98e374b2210a0e7e6efe4031d13a5)**, whose immediate parent is the existing compiled pin `c2e7c4671a0e24af9879e59279f1309974c559cb`. It lives on `codex/factory-terminal-status`. Its diff contains only the Factory presentation component, its tests and the package handoff document; later Flujo world, eyes and voice changes are outside that pin. The source main branch has not adopted this compatibility change.
+
+`npm install git+https://github.com/flujo-app/flujo-avatar.git#f52e16cfcdb98e374b2210a0e7e6efe4031d13a5`
+
+The only contract addition is two `selectedTask.reportedStatus` values, under the host's unchanged schemaVersion 1:
+
+- `completed`: an explicitly typed operation closed with exact successful effect evidence. EN/ES/PT canonical captions identify operation completion and explicitly say this status does not establish software review or delivery. The host owns validation of the operation/effect admission.
+- `cancelled`: abandoned work or unmet acceptance. Captions distinguish that outcome, and supplied attempt/owner, candidate and review hashes remain unchanged. Null evidence stays absent.
+- Neither value implies running work, worker activity, verified/delivered software, physical quiescence, budget release or final metered spend. Independently supplied activity evidence remains independent; readable eyes stay idle and unavailable eyes stay disconnected. Observation fields, inspect-only callback, runtime exports, `commands: false` and `voice: false` remain unchanged.
+
+Qualification was performed in an isolated Windows worktree with Node 22.13.1 / npm 11.19.0:
+
+- All **44 source-package tests** passed, including **11 Factory tests** against the compiled Factory export. New regressions cover both statuses in EN/ES/PT, fresh/stale/preview data and all three activity-evidence values; explicit review/delivery limitations; hash retention; unavailable-data hiding; null evidence; frozen cancellation props; and the unchanged export allowlist.
+- Source example types/build passed with React 18.3.1, as did the React 19.2.8 source consumer.
+- A clean consumer installed the exact public Git HTTPS pin. Its **11 Factory tests**, strict TypeScript fixture (all six old and two new statuses accepted; generic `complete` rejected), React 18.3.1 Vite production build and React 19.2.8 Vite production build passed.
+- npm initially serialized the requested HTTPS dependency as Git SSH in the consumer lockfile. The lock's resolved URL was restored to the explicit `git+https` pin; `npm ci` passed and retained that HTTPS lock. The installed ESM, CSS and Factory declarations matched the source-built files byte for byte after reinstallation.
+- Package dry-run included only ten allowed files: compiled ESM/CSS/declarations, package metadata and documentation; it packed no voice source, fixture, credentials or backend checkout. Git installation uses the existing `prepare` compilation; `dist` is not tracked or published to npm.
+
+Compiled SHA-256 values at the exact pin:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| dist/index.js | 57986651146797e206f4fffcb7d5d6b568c4c1facc765d93abef97dc00a0b7cb |
+| dist/index.css | 5fb6bb0140180a70988f96368e1327283b6ad5725d61100f9eb621bcb7a38643 |
+| dist/factory/FactoryAvatar.d.ts | b379d5dea57c94ad53b752542f51920c2fb36a4ccf4fdf0d218f9194012976e6 |
+
+The local machine-readable record is `artifacts/factory-terminal-qualification.json` (ignored review evidence). Brain's owner independently qualifies the installed App/shared-schema/BFF/avatar reader and updates PR #34 before FACTORY writes either terminal value live. Package checks here do not qualify that live host. No Brain/FACTORY files, controller state, deployment or production configuration were modified.
