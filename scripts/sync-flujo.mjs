@@ -4,18 +4,20 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const target = resolve(process.argv[2] || join(root, 'flujo'));
+// These generated members are UTF-8 source text. Hash the canonical bytes that Git ships.
+const canonicalSource = async path => Buffer.from((await readFile(path, 'utf8')).replaceAll('\r\n', '\n'));
 const files = {};
 for (const area of ['client', 'server']) {
   const source = join(root, 'src', area), output = join(target, 'src/vendor/avatar', area);
   await mkdir(output, { recursive: true });
   for (const name of await readdir(source)) {
-    const bytes = await readFile(join(source, name));
+    const bytes = await canonicalSource(join(source, name));
     await writeFile(join(output, name), bytes);
     files[`src/${area}/${name}`] = createHash('sha256').update(bytes).digest('hex');
   }
 }
 await mkdir(join(target, 'public'), { recursive: true });
-const audio = await readFile(join(root, 'public/avatar-audio-capture.js'));
+const audio = await canonicalSource(join(root, 'public/avatar-audio-capture.js'));
 await writeFile(join(target, 'public/avatar-audio-capture.js'), audio);
 files['public/avatar-audio-capture.js'] = createHash('sha256').update(audio).digest('hex');
 await writeFile(join(target, 'src/vendor/avatar/PROVENANCE.json'), JSON.stringify({
