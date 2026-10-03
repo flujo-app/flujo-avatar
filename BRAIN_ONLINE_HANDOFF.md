@@ -66,7 +66,7 @@ type FactoryAvatarObservation = {
   selectedTask?: {
     id: string; attempt: number; owner: string | null;
     reportedStatus: 'ready' | 'running' | 'review' | 'verified'
-      | 'delivered' | 'rejected';
+      | 'delivered' | 'rejected' | 'completed' | 'cancelled';
     candidateDigest: string | null;
     reviewEvidenceDigest: string | null;
   };
@@ -106,3 +106,24 @@ Do not read the private FACTORY credential in an avatar frontend, expose raw con
 4. Keep voice/commands disabled. Review the bounded server narration contract separately when FACTORY/Brain owners provide authority and admission.
 
 Current Flujo evidence: 33 portable tests, 65 focused backend tests, 10 frontend tests after identity coverage, and a successful production build before the final identity/layout follow-up. Browser checks passed bootstrap Spanish audio before a work AI existed, real Codex model/tool verification, Flujo tool execution, `write_resource`, artifact preview/reload, canonical-result audio without microphone access, and embedded Spanish conversation inspection. Flow/Persona identity and final layout changes are being built/tested in the isolated Flujo worktree. Human microphone quality is not claimed.
+
+## Terminal outcome compatibility — 3 October 2026
+
+This focused update is based on Brain's existing compiled package pin
+`c2e7c4671a0e24af9879e59279f1309974c559cb`, rather than later Flujo world or voice changes.
+It adds only `completed` and `cancelled` to `selectedTask.reportedStatus`.
+The host DTO remains schemaVersion 1; no observation fields, commands, exports or backend connections are added.
+
+- `completed` closes an explicitly typed operation with exact successful effect evidence. The EN/ES/PT captions identify an operation outcome and explicitly say this status does not establish software review or delivery. Host validation owns that admission; this pure renderer does not inspect private operation effects.
+- `cancelled` records abandonment or unmet acceptance. The renderer retains supplied attempt/owner and candidate/review hashes; it does not clear evidence or count this outcome as accepted delivery.
+- Neither terminal value establishes running work, physical activity, worker quiescence, budget release or final metered spend. Independently supplied activity evidence remains independent. Eyes remain idle for readable observations and disconnected for unavailable data; `commands: false` and `voice: false` stay unchanged.
+
+Qualification in an isolated worktree on Windows, Node 22.13.1 / npm 11.19.0:
+
+- `npm ci` and `npm test` passed: **44 tests**, including **11 Factory presentation tests** against the compiled `@flujo-ai/avatar/factory` export.
+- New regressions exercise completed/cancelled in EN/ES/PT × fresh/stale/preview × idle/recent/uncertain evidence; verify explicit review/delivery limitations, idle eyes and unverified workers, preserve hashes, hide unavailable evidence, allow null hashes without inventing them, and render frozen cancellation props without mutation.
+- `npm run example:typecheck` and `npm run example:build` passed with React 18.3.1; the isolated React 19.2.8 Vite consumer built successfully using its existing dependencies read-only.
+- `npm pack --dry-run --json` passed: ten allowed package files, including compiled ESM/CSS/declarations and handoff documentation. No voice source, preview fixtures, backend, credentials or checkout is packed. Git HTTPS installation builds `dist` with the existing `prepare` script.
+- The compiled runtime export allowlist remains exactly `Eyes` and `FactoryAvatar`; voice and execution modules are outside this package boundary.
+
+This qualification covers the package reader only. Brain's owner must independently qualify its shared schema, BFF, dashboard and installed avatar at an exact public Git HTTPS pin before FACTORY writes either terminal value live. No Brain/FACTORY files, live controller state, deployment or production configuration are changed here.
