@@ -3,5 +3,5 @@
     "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx",
     "strict": true, "skipLibCheck": true, "noEmit": true, "types": ["vite/client"], "lib": ["ES2022", "DOM"]
   },
-  "include": ["examples/factory/main.tsx"]
+  "include": ["examples/factory/main.tsx", "examples/world-sky/main.tsx"]
 }

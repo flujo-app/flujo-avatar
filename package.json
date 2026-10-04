@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "description": "Portable eyes and native conversation adapter for Flujo",
-  "files": ["dist", "README.md", "NOTICE.md", "BRAIN_ONLINE_HANDOFF.md"],
+  "files": ["dist", "README.md", "NOTICE.md", "BRAIN_ONLINE_HANDOFF.md", "WORLD_SKY.md"],
   "exports": {
     ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./eyes": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./factory": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./world-sky": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./styles.css": { "types": "./dist/styles.css.d.ts", "default": "./dist/index.css" }
   },
   "peerDependencies": { "react": "^18.3.1 || ^19.0.0" },

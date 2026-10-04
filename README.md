@@ -27,3 +27,5 @@ Run `npm run example:build`, then `npm run example` for the React 18/Vite consum
 Read [the vision](VISION.md), [the source audit](FLUJO_CAPABILITIES.md), [connection discovery](CONNECTION_DISCOVERY.md), and [build evidence](BUILD_LOG.md).
 
 The source adapter also accepts a [host-owned authenticated transport](REMOTE_VOICE_TRANSPORT.md). A [mountable development world](DEVELOPMENT_WORLD.md) reuses the physical scene for O's same-host coordinator, with task intake and current-state SSE. Its static artifact and local fixtures are separate from the full Flujo `/world` application.
+
+The optional [World and sky camera](WORLD_SKY.md) keeps the existing world and swarm surfaces mounted while the user scrolls between them. It consumes host-validated observations and returns scoped presentation intent; instance access and live voice stay with their authorized hosts.
