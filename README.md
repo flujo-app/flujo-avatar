@@ -27,3 +27,5 @@ Run `npm run example:build`, then `npm run example` for the React 18/Vite consum
 Read [the vision](VISION.md), [the source audit](FLUJO_CAPABILITIES.md), [connection discovery](CONNECTION_DISCOVERY.md), and [build evidence](BUILD_LOG.md).
 
 The source adapter also accepts a [host-owned authenticated transport](REMOTE_VOICE_TRANSPORT.md). A [mountable development world](DEVELOPMENT_WORLD.md) reuses the physical scene for O's same-host coordinator, with task intake and current-state SSE. Its static artifact and local fixtures are separate from the full Flujo `/world` application.
+
+The next interface uses **O** as its product brand across the companion, FACTORY swarm and Flujo, with the FLUJO World visual theme. The [integration plan](INTERFACE_INTEGRATION.md) maps the existing setup, work, voice and control capabilities that the new presentation must retain. The current O presentation is an observation surface; full operational integration and the actual Opus High visual refinement remain pending.
