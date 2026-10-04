@@ -2,6 +2,8 @@
 
 `WorldSky` is a presentation camera around the existing World and Brain swarm surfaces. Scroll upward from the terrain into the sky, or use its keyboard button. Both children remain mounted: a World draft, work drawer, native audio owner and the existing swarm iframe keep their state when the camera moves. The adapter starts at the World and honors reduced motion. The sky contains host-supplied observations; ambient decoration never establishes a worker or its activity.
 
+Each region contains its own visual layers, so a host header cannot cover the camera's controls. This preserves the existing surfaces' styling while keeping the World-to-sky button clickable.
+
 This proposal is separate from the sealed World PR #1 at `7aad2a5f237fd8670e4b99254a250729a7fb9844`, the original `9146a64` artifact and the Factory consumer `f52e16c`. It does not update those deployments or their source pins.
 
 ```tsx
