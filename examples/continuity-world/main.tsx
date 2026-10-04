@@ -124,7 +124,7 @@ function World() {
       const r = event.currentTarget.getBoundingClientRect();
       setPosition({ x: Math.max(16, Math.min(84, (event.clientX - r.left) / r.width * 100)), y: Math.max(20, Math.min(58, (event.clientY - r.top) / r.height * 100)) });
     }} onKeyDown={event => { if (event.key.startsWith('Arrow')) { event.preventDefault(); setPosition(p => ({ x: Math.max(16, Math.min(84, p.x + (event.key === 'ArrowRight' ? 7 : event.key === 'ArrowLeft' ? -7 : 0))), y: Math.max(20, Math.min(58, p.y + (event.key === 'ArrowDown' ? 7 : event.key === 'ArrowUp' ? -7 : 0))) })); } }} />
-    <header><a href="/world" className="brand">flujo<span> / Codex continuity</span></a>
+    <header><a href="/world" className="brand">FLUJO<span> World</span></a>
       <button aria-expanded={drawer} aria-controls="work-record" onClick={() => setDrawer(!drawer)}>Work <span aria-hidden="true">↗</span></button></header>
     <section className="companion" style={{ '--arrival-x': `${position.x}%`, '--arrival-y': `${position.y}%` } as CSSProperties}>
       <div className="presence">{voice.connected ? voice.phase === 'speaking' ? 'Speaking' : 'Listening' : availability}</div>
@@ -144,7 +144,7 @@ function World() {
         </form>}
       <p className="notice" role="status">{voice.error || (pending.current?.state === 'unknown' ? 'Submission unconfirmed · no automatic resubmission' : availability)}</p>
     </div>
-    {drawer && <aside id="work-record" aria-label="Work record"><div className="drawer-head"><h2>Codex work, quietly recorded.</h2><button onClick={() => setDrawer(false)} aria-label="Close work record">×</button></div>
+    {drawer && <aside id="work-record" aria-label="Work record"><div className="drawer-head"><h2>Work, quietly recorded.</h2><button onClick={() => setDrawer(false)} aria-label="Close work record">×</button></div>
       <p className="mode">Codex sibling review · same provider</p><p>Both workers use Codex. Review is a sibling pass on the same provider. Readiness is reported by the coordinator; saved output lights appear beside the river.</p>
       <p>Reviewed text only · tools disabled</p>
       {snapshot?.lastHeartbeat && <p>Last observation: {new Date(snapshot.lastHeartbeat).toLocaleTimeString('en')}</p>}

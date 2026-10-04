@@ -1,10 +1,10 @@
-# Codex sibling continuity world
+# FLUJO World
 
 This is a separate static adapter for O's new `codex-sibling-continuity-v1` mode. It preserves the original avatar source and six-member world artifact at `9146a64b355a6df60b3c6ae2b0a3d6be671806fe`. The new entry, parser, pending journal, preview server and artifact destination live separately.
 
 The browser accepts only status/SSE wire version 2, exact `reviewMode: 'codex-sibling-continuity-v1'`, exact `reviewEvidence: 'same-provider-sibling-job'`, and two distinct workers with developer/reviewer roles and `providerId: 'codex'`. The public namespace must match `^o-dev-continuity-[a-z0-9-]{1,100}$`; the public workspace must equal that namespace. Auth/session envelopes keep version 1. Legacy status wire 1, missing evidence, another provider, duplicate identities or another namespace refuse before intake can become available.
 
-The page identifies itself as Codex continuity. The work drawer labels Codex developer, Codex sibling reviewer, same provider and reviewed text with tools disabled. Accepted text is presented as “Text sibling review accepted.” No independent account, Claude review, coding execution or provider attempt count is inferred. Reported readiness and stored work never drive a claimed work animation; the eyes respond to actual voice phase and user movement.
+The product is named FLUJO World. Provider and review details appear in the work drawer: Codex developer, Codex sibling reviewer, same provider and reviewed text with tools disabled. Accepted text is presented as “Text sibling review accepted.” No independent account, Claude review, coding execution or provider attempt count is inferred. Reported readiness and stored work never drive a claimed work animation; the eyes respond to actual voice phase and user movement.
 
 Private worker workspace binding belongs to the server. The browser neither consumes nor forwards a `workerWorkspace`, worker origin, account, token or private model configuration. Public session/status workspace stays the fresh continuity namespace even when the coordinator reuses an existing private worker leaf. Root owns the actual new database, intent, worker binding, model qualification, source/image selection and deployment.
 

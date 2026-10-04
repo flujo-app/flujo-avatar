@@ -60,4 +60,4 @@ createServer(async (req, res) => {
     return json(res, 201, { id, duplicate: false });
   }
   return json(res, 404, { error: 'fixture_route_only' });
-}).listen(port, '127.0.0.1', () => console.log(`Sample-data Codex continuity world: http://127.0.0.1:${port}/world`));
+}).listen(port, '127.0.0.1', () => console.log(`Sample-data FLUJO World: http://127.0.0.1:${port}/world`));
