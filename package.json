@@ -1,6 +1,6 @@
 {
-  "name": "@flujo-ai/avatar",
-  "version": "0.1.0",
+  "name": "@o/world-presentation",
+  "version": "0.1.0-world.1",
   "private": true,
   "type": "module",
   "description": "Portable eyes and native conversation adapter for Flujo",

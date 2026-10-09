@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { WorldSky, currentWorldSkySelection, type WorldSkyModel, type WorldSkySelection } from '@flujo-ai/avatar/world-sky';
+import { WorldSky, currentWorldSkySelection, type WorldSkyModel, type WorldSkySelection } from '@o/world-presentation/world-sky';
 
 const model: WorldSkyModel = { schemaVersion: 1, scope: 'operator-source-registry', commands: false,
   sample: true, observedAt: '2026-10-03T00:00:00Z', sources: [
