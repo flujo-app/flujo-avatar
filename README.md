@@ -12,6 +12,9 @@ The integration must keep the customer informed through Savia in their signed-in
 
 For a fresh owner workspace, our OpenRouter conversation service works before AI setup; the owner connects their own subscription, API or local model for thinking and work. This setup capability remains available through Flujo's real controls.
 
+Optional [local Pocket speech](LOCAL-SPEECH.md) uses Anna for English and
+language-specific presets. The existing OpenRouter conversation/speech path remains.
+
 English is the default language for the avatar interface and voice. Spanish and Brazilian Portuguese remain selectable, and a saved workspace language choice is respected.
 
 The current direction is a playful physical world: the eyes travel to small sculpted places beside a river. Saved capabilities grow plants and lights; an automation turns its windmill only while it is actually running. Controls and the full transcript open on demand. Gaze, floating motion and speech loudness give the eyes a physical presence, with reduced-motion support.
