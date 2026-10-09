@@ -28,4 +28,6 @@ Read [the vision](VISION.md), [the source audit](FLUJO_CAPABILITIES.md), [connec
 
 The source adapter also accepts a [host-owned authenticated transport](REMOTE_VOICE_TRANSPORT.md). A [mountable development world](DEVELOPMENT_WORLD.md) reuses the physical scene for O's same-host coordinator, with task intake and current-state SSE. Its static artifact and local fixtures are separate from the full Flujo `/world` application.
 
+The optional [World and sky camera](WORLD_SKY.md) keeps the existing world and swarm surfaces mounted while the user scrolls between them. It consumes host-validated observations and returns scoped presentation intent; instance access and live voice stay with their authorized hosts.
+
 The next interface uses **O** as its product brand across the companion, FACTORY swarm and Flujo, with the FLUJO World visual theme. The [integration plan](INTERFACE_INTEGRATION.md) maps the existing setup, work, voice and control capabilities that the new presentation must retain. The current O presentation is an observation surface; full operational integration and the actual Opus High visual refinement remain pending.
