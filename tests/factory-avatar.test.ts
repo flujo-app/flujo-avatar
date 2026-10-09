@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { FactoryAvatar, type FactoryAvatarObservation, type AvatarLocale } from '@flujo-ai/avatar';
+import { FactoryAvatar, type FactoryAvatarObservation, type AvatarLocale } from '@o/world-presentation';
 const snapshot: FactoryAvatarObservation = {
   factoryId: 'fixture', revision: 7, cursor: 'opaque', observedAt: '2026-10-02T12:00:00Z', readState: 'fresh', mission: 'Inspect recorded work',
   selectedCell: { id: 'cell', purpose: 'Inspect', heartbeat: '2026-10-02T11:59:45Z', reportedStatus: 'ready', activityEvidence: 'recent' },

@@ -1,14 +1,19 @@
 {
-  "name": "@flujo-ai/avatar",
-  "version": "0.1.0",
+  "name": "@o/world-presentation",
+  "version": "0.1.0-world.1",
   "private": true,
   "type": "module",
   "description": "Portable eyes and native conversation adapter for Flujo",
-  "files": ["dist", "README.md", "NOTICE.md", "BRAIN_ONLINE_HANDOFF.md"],
+  "files": ["dist", "README.md", "NOTICE.md", "BRAIN_ONLINE_HANDOFF.md", "WORLD_SKY.md", "WORLD_PACKAGE.md", "src/world/canonical/MANIFEST.json"],
   "exports": {
     ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./eyes": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./factory": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./world-sky": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./world": { "types": "./dist/world/index.d.ts", "import": "./dist/world.js" },
+    "./world.css": { "types": "./dist/world.css.d.ts", "default": "./dist/world.css" },
+
+    "./voice-transport": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./styles.css": { "types": "./dist/styles.css.d.ts", "default": "./dist/index.css" }
   },
   "peerDependencies": { "react": "^18.3.1 || ^19.0.0" },
@@ -16,7 +21,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "node scripts/build.mjs && tsc -p tsconfig.package.json",
+    "build": "node scripts/build.mjs && tsc -p tsconfig.package.json && node scripts/resolve-world-declarations.mjs",
     "test": "npm run build && tsx --test tests/*.test.mjs tests/*.test.ts",
     "example": "vite examples/factory --host 127.0.0.1 --port 43946 --strictPort",
     "example:build": "vite build examples/factory",

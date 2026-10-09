@@ -1,0 +1,42 @@
+{
+  "sourceRepository": "https://github.com/mario-andreschak/FLUJO",
+  "sourceCommit": "3d85f2df3070d1b92aea68732cdeda028d30e6ac",
+  "files": [
+    {
+      "sourcePath": "src/frontend/components/AvatarWorld/WorldScene.tsx",
+      "path": "src/world/canonical/src/frontend/components/AvatarWorld/WorldScene.tsx",
+      "bytes": 13757,
+      "sha256": "311e3354347cb6a261572503366f458b2abe5acac6892514c00c62e65ebe83da"
+    },
+    {
+      "sourcePath": "src/frontend/components/AvatarWorld/Watershed.tsx",
+      "path": "src/world/canonical/src/frontend/components/AvatarWorld/Watershed.tsx",
+      "bytes": 2447,
+      "sha256": "5e600190d5ac6c31aa4a1a5637e5f5fadbacb8689835e262f486d2fddcaa37d9"
+    },
+    {
+      "sourcePath": "src/frontend/components/AvatarWorld/Eyes.tsx",
+      "path": "src/world/canonical/src/frontend/components/AvatarWorld/Eyes.tsx",
+      "bytes": 143,
+      "sha256": "29a238c72b623796ceacea6ac90f8408a4d2650e3b94112e233d8c0c89605df3"
+    },
+    {
+      "sourcePath": "src/frontend/components/AvatarWorld/copy.ts",
+      "path": "src/world/canonical/src/frontend/components/AvatarWorld/copy.ts",
+      "bytes": 9703,
+      "sha256": "f576fdfab5f4d74d1c9dbe0b234d8c46d1bb20bcd2fcabcdb07efc1274ab8075"
+    },
+    {
+      "sourcePath": "src/frontend/components/AvatarWorld/world.module.css",
+      "path": "src/world/canonical/src/frontend/components/AvatarWorld/world.module.css",
+      "bytes": 21784,
+      "sha256": "30bd5ce000f0768c69984d5ddcf11f96443b1ca8821961a409daac5d1cf7cb54"
+    },
+    {
+      "sourcePath": "src/shared/types/avatar.ts",
+      "path": "src/world/canonical/src/shared/types/avatar.ts",
+      "bytes": 1438,
+      "sha256": "2bd292b8d093b2b1b9bdebd698f6af7072547d48bac74269b9273797cfa9ba21"
+    }
+  ]
+}
