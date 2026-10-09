@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "ES2022", "module": "ESNext", "moduleResolution": "Bundler", "jsx": "react-jsx",
     "strict": true, "skipLibCheck": true, "declaration": true, "emitDeclarationOnly": true,
-    "rootDir": "src", "outDir": "dist", "lib": ["ES2022", "DOM"], "noEmitOnError": true
+    "rootDir": "src", "outDir": "dist", "lib": ["ES2022", "DOM"], "noEmitOnError": true,
+    "paths": {
+      "@/shared/types/avatar": ["./src/world/canonical/src/shared/types/avatar.ts"],
+      "@/vendor/avatar/client/Eyes": ["./src/client/Eyes.tsx"]
+    }
   },
-  "include": ["src/index.ts", "src/css.d.ts"]
+  "include": ["src/index.ts", "src/world/index.ts", "src/css.d.ts"]
 }
