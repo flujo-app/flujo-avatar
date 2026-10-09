@@ -1,5 +1,9 @@
 # Savia avatar
 
+The [Flujo Avatar SDK](packages/avatar-sdk/README.md) packages presentation,
+World terrain and the host-owned native voice hook as `@flujo-ai/avatar-sdk`.
+Build with `npm run build` and create an installable archive with `npm run pack:sdk`.
+
 Savia is the customer's AI assistant: one conversation that owns a problem through resolution or a tracked human handoff. Black and white eyes live in a world that evolves from real Flujo state. Flujo remains the orchestration, MCP, chat, API, workspace and recovery foundation; O/FACTORY/Seagulled supply coordination, execution and review.
 
 When Savia cannot resolve a problem immediately, it reuses the recovered Claude swarm-teams implementation: `swarm_agent`, `swarm_team`, `swarm_supervisor` and the `swarm_boot` clone flow. Specialize the existing tasks, roles and instructions for the customer's problem. The target is ten Fly FLUJO Machines, each running one lead plus nine specialist conversations: 100 other AIs, with Savia's root supervision separate. The selected Savia team must use a native subflow concurrency bound of nine. Logical members, active conversations and Machines have separate counts; show measured working capacity separately from this exact target. A new role manifest or orchestration engine is not a prerequisite.

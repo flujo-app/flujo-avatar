@@ -21,7 +21,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "node scripts/build.mjs && tsc -p tsconfig.package.json && node scripts/resolve-world-declarations.mjs",
+    "build": "node scripts/build.mjs && tsc -p tsconfig.package.json && node scripts/resolve-world-declarations.mjs && node scripts/build-sdk.mjs",
+    "pack:sdk": "npm pack ./packages/avatar-sdk --ignore-scripts",
+    "check:sdk": "npm run build && node scripts/check-sdk.mjs",
     "test": "npm run build && tsx --test tests/*.test.mjs tests/*.test.ts",
     "example": "vite examples/factory --host 127.0.0.1 --port 43946 --strictPort",
     "example:build": "vite build examples/factory",

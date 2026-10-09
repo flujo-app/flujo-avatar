@@ -8,5 +8,5 @@
       "@/vendor/avatar/client/Eyes": ["./src/client/Eyes.tsx"]
     }
   },
-  "include": ["src/index.ts", "src/world/index.ts", "src/css.d.ts"]
+  "include": ["src/index.ts", "src/world/index.ts", "src/sdk/index.ts", "src/css.d.ts"]
 }
