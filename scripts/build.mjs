@@ -12,3 +12,6 @@ await writeFile('dist/world.css.d.ts', 'export {};\n');
 await build({ entryPoints: ['src/sdk/index.ts'], outfile: 'dist/sdk.js', bundle: true, format: 'esm',
   platform: 'browser', target: 'es2020', jsx: 'automatic', tsconfig: 'tsconfig.package.json',
   external: ['react', 'react/jsx-runtime'], banner: { js: "'use client';" } });
+await build({ entryPoints: ['src/sdk/native-voice.ts'], outfile: 'dist/native-voice.js', bundle: true, format: 'esm',
+  platform: 'browser', target: 'es2020', jsx: 'automatic',
+  external: ['react', 'react/jsx-runtime'], banner: { js: "'use client';" } });

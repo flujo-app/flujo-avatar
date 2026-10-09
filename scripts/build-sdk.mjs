@@ -9,6 +9,10 @@ await cp('dist', resolve(root, 'dist'), { recursive: true });
 await mkdir(resolve(root, 'public'), { recursive: true });
 await cp('public/avatar-audio-capture.js', resolve(root, 'public/avatar-audio-capture.js'));
 await cp('NOTICE.md', resolve(root, 'NOTICE.md'));
+await mkdir(resolve(root, 'server'), { recursive: true });
+for (const name of ['pocket-speech.mjs', 'pocket-speech.d.mts', 'support.mjs']) {
+  await cp(`src/server/${name}`, resolve(root, 'server', name));
+}
 const files = {};
 async function inventory(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -19,6 +23,7 @@ async function inventory(directory) {
 }
 await inventory(resolve(root, 'dist'));
 await inventory(resolve(root, 'public'));
+await inventory(resolve(root, 'server'));
 const revision = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const sourceDirty = Boolean(execFileSync('git', ['status', '--porcelain', '--untracked-files=no'], { encoding: 'utf8' }).trim());
 await writeFile(resolve(root, 'PROVENANCE.json'), JSON.stringify({

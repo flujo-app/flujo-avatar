@@ -6,6 +6,7 @@ node_modules/
 artifacts/
 dist/
 packages/avatar-sdk/public/
+packages/avatar-sdk/server/
 packages/avatar-sdk/NOTICE.md
 packages/avatar-sdk/PROVENANCE.json
 *.tgz
