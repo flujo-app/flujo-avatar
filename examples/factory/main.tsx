@@ -1,7 +1,7 @@
 import { useState, version } from 'react';
 import { createRoot } from 'react-dom/client';
-import { FactoryAvatar, type FactoryAvatarObservation, type AvatarLocale } from '@flujo-ai/avatar';
-import '@flujo-ai/avatar/styles.css';
+import { FactoryAvatar, type FactoryAvatarObservation, type AvatarLocale } from '@o/world-presentation';
+import '@o/world-presentation/styles.css';
 import './example.css';
 const fixture: FactoryAvatarObservation = {
   factoryId: 'design-fixture', revision: 7, cursor: 'opaque-example', observedAt: '2026-10-02T12:00:00Z', readState: 'preview',

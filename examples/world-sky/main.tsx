@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { WorldSky, currentWorldSkySelection, type WorldSkyIntent, type WorldSkyModel, type WorldSkySelection } from '@flujo-ai/avatar/world-sky';
-import '@flujo-ai/avatar/styles.css';
+import { WorldSky, currentWorldSkySelection, type WorldSkyIntent, type WorldSkyModel, type WorldSkySelection } from '@o/world-presentation/world-sky';
+import '@o/world-presentation/styles.css';
 import './fixture.css';
 
 const fixture: WorldSkyModel = { schemaVersion: 1, scope: 'operator-source-registry', commands: false,

@@ -12,6 +12,8 @@
     "./world-sky": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./world": { "types": "./dist/world/index.d.ts", "import": "./dist/world.js" },
     "./world.css": { "types": "./dist/world.css.d.ts", "default": "./dist/world.css" },
+
+    "./voice-transport": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
     "./styles.css": { "types": "./dist/styles.css.d.ts", "default": "./dist/index.css" }
   },
   "peerDependencies": { "react": "^18.3.1 || ^19.0.0" },
