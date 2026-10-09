@@ -1,0 +1,38 @@
+# O interface integration
+
+4 October 2026
+
+O is the product brand for the unified interface across the companion, FACTORY swarm and Flujo. The visual reference is FLUJO World: black and white eyes in a playful physical world, with animated details and floating windows. The opening should show little information; the user can reveal machines, flows, history, transcripts and timelines when needed. New visual and interaction work is authored by Claude Opus at High effort.
+
+The existing [Flujo world implementation](https://github.com/mario-andreschak/FLUJO/pull/560) supplies model setup, real work, voice and precise controls. The new O presentation currently displays swarm membership observations. Its draft cannot send work, and its terrain receives no Flujo workspace snapshot. Bringing the two surfaces together must retain the complete workflow described in [the vision](VISION.md).
+
+## Capabilities the integration must retain
+
+The source references below are pinned to Flujo commit `3d85f2df3070d1b92aea68732cdeda028d30e6ac`. They establish existing implementation seams. They do not certify that the new O composition has exercised those capabilities.
+
+| Capability | Existing Flujo seam | Required behavior in the unified interface |
+| --- | --- | --- |
+| AI discovery and setup | [Connection discovery](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/backend/services/avatar/connectionDiscovery.ts) and [model verification](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/app/api/avatar/work-model/route.ts) | Offer detected Codex and Claude candidates plus other model paths. Let the user choose. Test that saved model and its tools before declaring it ready. Dated catalog hints remain unverified. |
+| Thinking, work and identity | [Work controller](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/useAvatarWork.ts) | The selected AI performs guide work through existing Flujo tools. Saved Flows and Personas retain their own bindings. Changing the companion's style preserves operational identity. |
+| Apps, MCP and precise editing | [Persistent panel](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/useWorldPanel.ts) and [panel bridge](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/AvatarPanelBridge.tsx) | Keep real controls and hosted Apps usable. Preserve the mounted panel, workspace and origin checks. Apply validates the original panel scope. |
+| Personas, memory and goals | [World snapshot](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/backend/services/avatar/worldSnapshot.ts) and [resident selection](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/index.tsx) | Address the actual Persona and open its real controls. The scene snapshot deliberately excludes memories, goals, secrets and tool arguments; retain access through the existing runtime and panels. |
+| Automations, meetings and packages | [Existing service projections](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/backend/services/avatar/worldSnapshot.ts) and [destinations](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/Watershed.tsx) | Reflect saved entities and actual states, including unavailable or truncated sections. Keep View All and real authoring and execution controls reachable. |
+| Artifacts and history | [Resource preview](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/ResourcePreview.tsx) and [work controller](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/useAvatarWork.ts) | Retain real conversation and resource identifiers, previews, downloads and history. Show saves and results only after their actual outcome. |
+| Steering, cancellation and recovery | [Work controller](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/useAvatarWork.ts) | Amend active work through the existing injection path, cancel the actual conversation, and reconcile saved state after reconnecting. Stopping speech has a separate meaning. |
+| Bootstrap voice and quiet narration | [Voice service](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/backend/services/avatar/voice.ts) and [voice ownership](https://github.com/mario-andreschak/FLUJO/blob/3d85f2df3070d1b92aea68732cdeda028d30e6ac/src/frontend/components/AvatarWorld/index.tsx) | OpenRouter conversation works before setup. After setup, recognized requests go to Flujo; speech presents a brief canonical result using fresh facts. Preserve interruption and stale-request guards. |
+
+English remains the default. Spanish and Brazilian Portuguese are deliberate choices. Text, keyboard input, reduced motion and output without a microphone remain available. Human microphone review is still required to assess pacing and interruption feel.
+
+## Integration sequence
+
+1. Finish the actual Opus High core refinement and review the rendered result. The first candidate retains draft, window and viewer state across ground and sky. Known issues remain in composer and dock spacing, sky controls, the phone Providers key and desktop window dragging.
+2. Align the Flujo surface through the same requested visual author. Preserve the operational hooks above while reducing the visible interface and introducing details progressively.
+3. Compose the authored presentation with real authenticated host data and controls. Keep the existing Factory package pin when adding the [separate World package](https://github.com/flujo-app/flujo-avatar/pull/4). Terrain receives a real authorized Flujo snapshot; swarm membership cannot establish model readiness or automation activity. Verify operational hooks and API versions for each deployed Flujo instance separately; matching renderer inputs does not establish runtime parity.
+4. Exercise complete journeys in the integrated surface: empty workspace setup, selected work model, actual Flow and Persona work, Apps, goals and memory, automations, meetings, packages, artifacts, steering, cancellation and recovery. Qualify cloud execution and workspace restoration separately, including both subscription paths.
+5. Review actual microphone use and the final desktop, phone and reduced-motion experience before declaring the interface complete.
+
+The [accepted-task narration adapter](https://github.com/flujo-app/flujo-avatar/pull/3) is a separate disabled candidate. It needs authenticated host adoption and backend qualification before it can provide O narration. A successful text task or visible swarm observation does not establish voice readiness.
+
+## Current acceptance
+
+The existing Flujo implementation has passed its required CI on the pinned source. The mechanical World package has a separate frozen review. The first O candidate passed the reviewed sample draft, window, camera and reduced-motion checks, with the layout issues above still open. Full operational integration, actual High visual refinement and human microphone acceptance remain pending. Package tests and sample screenshots each cover their own scope; the full interface is unfinished.
