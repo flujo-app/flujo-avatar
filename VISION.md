@@ -1,8 +1,14 @@
-# Flujo: a world inhabited by your agents
+# Savia: one assistant in FLUJO World
 
-2 October 2026 · source-grounded interface proposal
+5 October 2026 · customer direction, retaining the 2 October interface foundations
 
-Flujo keeps its backend, APIs, UI, models, tools, flows, automations, and persistent-agent runtime. The new interface turns those capabilities into a place where the user interacts with characters. White eyes greet them in darkness, help them connect an existing AI subscription or another work model, and accompany them into a world that grows from actual Flujo state.
+Savia owns the customer's problem through an immediate answer or investigation, reviewed synthesis and follow-up. The customer talks to one assistant. When a human is needed, Savia uses the existing ticket integration with context, evidence and attempted actions, and continues status through the ticket handoff. Updates reach the customer through their signed-in session or the existing push/email integrations.
+
+Reuse the recovered `swarm_supervisor`, `swarm_team`, `swarm_agent` and `swarm_boot` clone/installer route. The exact target is ten Fly FLUJO Machines with one team lead and nine specialists on each: 100 other AIs, with Savia's root supervision separate. Specialize the selected team's existing prompt and native subflow concurrency bound to nine; record every lead/child conversation ID and its actual state. The existing fleet, board, relay and native subflow messaging provide collaboration. Inter-agent task/message/result communication can be text.
+
+Preserve the accepted recovered team, tree, benchmark and inference proofs at their measured scopes. They do not alone qualify this exact simultaneous customer run. Current inference availability and actual capacity must be stated separately from the target. The current reuse and acceptance plan is in [Savia interface integration](INTERFACE_INTEGRATION.md).
+
+Flujo keeps its backend, APIs, UI, models, tools, flows, automations, and persistent-agent runtime. Savia's white eyes accompany the customer into a world that grows from actual Flujo state. Technical operators retain real configuration and inspection controls, including connecting an existing AI subscription or another work model for a fresh owner workspace.
 
 This proposal follows [the capability audit](FLUJO_CAPABILITIES.md) and [the connection discovery plan](CONNECTION_DISCOVERY.md). Those documents distinguish current capabilities from missing integration work.
 
@@ -20,11 +26,11 @@ English is the primary language for the interface and conversation. Spanish and 
 
 **The user's AI does the thinking and work.** Most users should be able to start with their existing Codex or Claude subscription. Detect candidates and offer usable options first; API and local-model paths remain available. That connection does not need native voice support.
 
-**Flujo's existing agents and Personas do the execution.** A saved Flow agent can appear as a character. A persistent Persona can become a resident with its real mission, memory, goals, behaviors, and apps. The visual identity does not create another task or memory runtime.
+**Flujo's existing agents and Personas do the execution.** Their real missions, memory, goals, behaviors and apps remain available to operators. Savia stays the customer's conversational assistant; team observations can reveal real activity without creating another task or memory runtime.
 
 **The world reflects what exists and what happens.** A place has a purpose, a working mechanism corresponds to a real automation, and a result object opens a real artifact. The user can speak or use text, interact with a character or object, and open the real Flujo/app surface for precise control.
 
-## First five minutes
+## First five minutes in an owner workspace
 
 1. **Awaken.** Black screen; two white eyes blink and attend to the user. A gesture begins conversation/microphone admission. Text is available immediately. “Hi. Let’s see which AI you can use here.”
 2. **Discover.** The shell inspects saved connections and supported runtime/login metadata on the Flujo host. It offers detected Codex/Claude candidates, local models, and other AI connections. “Codex detected” and “verified for Flujo” remain distinct.
@@ -58,34 +64,35 @@ The current world follows routes behind conventional panels. The new work is mak
 
 Start with charcoal space, chalk-white eyes, expressive gaze/blinks, soft grain, subtle light, and authored environmental motion. Keep the opening visually simple. Color and cinematic assets can emerge later.
 
-Moss, Orbit, and Spark retain the POC's patient, measured, and energetic paces. They are useful **presentation styles**. A real backend agent/Persona is a separate **operational identity**. The selected style can change without changing the job; switching to another actual Persona deliberately changes whose mission, memory, abilities, and tasks are addressed.
+Moss, Orbit, and Spark retain the POC's patient, measured, and energetic paces as **presentation styles** for the recognizable assistant. Backend agents/Personas retain separate **operational identities**. Operators can inspect or deliberately address them through real Flujo controls while the customer's problem remains owned by Savia.
 
 Keep the eyes recognizable across the styles. Offer pace gently and let the user choose. A playful character still speaks accurate results and respects “slow down.” Scene transitions wait while the user reads, enters credentials, or reviews a result.
 
-Several agents can work, but one active conversational speaker should keep the experience intelligible. A backend meeting may produce several contributions; the voice lane presents them with clear attribution instead of assuming several concurrent native voice sessions.
+Many agents can work while Savia remains the customer's speaker. Meetings and team investigations can produce several contributions; Savia synthesizes and attributes reviewed results through one conversation.
 
 ## Architecture: one voice, many work capabilities
 
 ```mermaid
 flowchart LR
-    U[User voice / text] <--> A[Eyes / avatar shell]
-    A <--> V[Our conversation service\nPOC OpenRouter audio initially]
-    A <--> P[Presentation coordinator\nworld, identity, voice ownership]
-    P <--> C[Existing Ask FLUJO context / actions\nand chat services]
-    C <--> F[Flujo flows / Personas / meetings]
-    F <--> M[Selected subscription / API / local AI]
-    F <--> T[Flujo control tools and connected apps]
-    F --> E[Execution events / persisted state\nPersona projection / resources]
-    E --> P
-    P -->|Bounded verified facts| V
-    A <--> S[Real Flujo panels and MCP App host]
+    U[Customer voice / text] <--> S[Savia: one problem owner]
+    S <--> V[Existing conversation / voice adapter]
+    S <--> F[FLUJO chat / API / workspace / recovery]
+    V <--> F
+    F <--> R[swarm_supervisor: separate Savia root]
+    R <--> W[10 Fly FLUJO Machines: each 1 lead + 9 specialists]
+    W <--> B[Existing fleet / board / relay]
+    W <--> M[Installed MCP tools / model bindings]
+    F <--> P[Owner controls / Apps / Flows / Personas]
+    F <--> H[Existing human ticket: context / evidence / attempts]
+    F --> N[Existing push / email / session updates]
+    N --> U
 ```
 
 **Conversation lane:** listening, short interaction, pacing, interruptions, and spoken presentation. It works before a user work model exists. Initial setup follows a bounded setup state machine. After setup, substantive decisions and configuration assistance go through the selected Flujo model. Keep the accepted native audio adapter replaceable.
 
 **Work lane:** the existing flow/Persona/meeting runtime, with the user's chosen model and deliberately exposed tools. Reuse `mcp-flujo` building-block discovery, semantic flow authoring/validation, app research/install, automation operations, and Persona composition where available. The bundled agent's initial tool allowlist is narrower than the full control surface; expose additional abilities through real configuration.
 
-**Presentation coordinator:** determines which agent/Persona the user addresses, correlates results with the workspace/conversation/activity, manages live voice ownership, and maps actual events to scenes. It is an interaction adapter, not a second execution engine, planner, memory store, or scheduler.
+**Presentation coordinator:** keeps Savia as the customer's assistant, correlates actual results with the workspace/conversation/activity, manages voice ownership and maps recorded events to scenes. Technical operator controls retain deliberate Flow/Persona selection. The coordinator is an interaction adapter over the existing execution, memory and scheduling foundation.
 
 Reuse Ask FLUJO's page-owned context, advertised editable/highlight targets, and scope validation. Extend page registrations for Persona, automation, meeting, and connection surfaces as needed. Preserve the existing Apply behavior for proposed UI edits and existing execution/installation controls.
 
