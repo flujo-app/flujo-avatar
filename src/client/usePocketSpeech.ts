@@ -12,6 +12,7 @@ export function usePocketSpeech(request: (result: PocketResult, signal: AbortSig
   const speak=useCallback((result:PocketResult)=>{
     stop();setError('');const owned:{controller:AbortController;audio?:HTMLAudioElement;url?:string}={controller:new AbortController()};active.current=owned;
     void currentRequest.current(result,AbortSignal.any([owned.controller.signal,AbortSignal.timeout(45000)])).then(async response=>{
+      if(active.current!==owned||owned.controller.signal.aborted){await response.body?.cancel();return;}
       if(!response.ok||response.headers.get('content-type')?.split(';')[0]!=='audio/wav') {await response.body?.cancel();throw Error('Local speech unavailable.');}
       const reader=response.body?.getReader();if(!reader)throw Error('Local speech unavailable.');
       let bytes=0;const chunks:Uint8Array<ArrayBuffer>[]=[];

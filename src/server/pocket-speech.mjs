@@ -27,11 +27,14 @@ export async function pocketAvailability(origin, fetchImpl = fetch, signal) {
 }
 export async function synthesizePocket(value, origin, fetchImpl = fetch, signal) {
   const payload = validatePocketSpeech(value);
+  const lifetime = AbortSignal.any([signal ?? new AbortController().signal, AbortSignal.timeout(45_000)]);
+  lifetime.throwIfAborted();
   const response = await fetchImpl(pocketOrigin(origin) + '/speech', { method: 'POST', redirect: 'error',
     headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload),
-    signal: AbortSignal.any([signal ?? new AbortController().signal, AbortSignal.timeout(45_000)]) });
+    signal: lifetime });
   if (!response.ok) { await response.body?.cancel(); throw new PublicError(response.status === 429 ? 429 : 503, 'local_speech_unavailable', 'Local speech is busy or unavailable.'); }
   const bytes = await readResponse(response, 44 + 24000 * 2 * 31);
+  lifetime.throwIfAborted();
   // Fixed mono PCM16 WAV: no URLs, file paths or arbitrary media from the worker.
   if (bytes.length < 46 || bytes.toString('ascii', 0, 4) !== 'RIFF' || bytes.toString('ascii', 8, 12) !== 'WAVE' ||
       bytes.toString('ascii', 12, 16) !== 'fmt ' || bytes.readUInt32LE(16) !== 16 || bytes.readUInt16LE(20) !== 1 ||

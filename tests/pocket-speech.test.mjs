@@ -23,10 +23,13 @@ test('synthesis forwards no credential, validates PCM and propagates cancellatio
     assert.equal(url, 'http://127.0.0.1:43947/speech');
     assert.deepEqual(options.headers, { 'content-type': 'application/json' });
     assert.deepEqual(JSON.parse(options.body), { text: 'Hello', locale: 'en' });
-    controller.abort(); assert.equal(options.signal.aborted, true);
+    assert.equal(options.signal.aborted, false);
     return new Response(wav());
   }, controller.signal);
   assert.equal(output.length, 48);
+  await assert.rejects(synthesizePocket({text:'Hello',locale:'en'},'http://127.0.0.1:43947',async(_url,options)=>{
+    controller.abort();assert.equal(options.signal.aborted,true);return new Response(wav());
+  },controller.signal),{name:'AbortError'});
   for (const bytes of [Buffer.from('bad'), Buffer.alloc(1500000), (() => { const b=wav(); b.writeUInt32LE(22050,24); return b; })()])
     await assert.rejects(synthesizePocket({ text: 'Hello', locale: 'en' }, 'http://127.0.0.1:43947', async () => new Response(bytes)));
 });
