@@ -1,5 +1,8 @@
 # Flujo Avatar
 
+Optional [local Pocket speech](LOCAL-SPEECH.md) uses Anna for English and
+language-specific presets. The existing OpenRouter conversation/speech path remains.
+
 Black and white eyes in a world that evolves from real Flujo state. Flujo remains the backend, execution engine and embedded control surface. Our OpenRouter conversation service handles voice before setup; the user connects their own subscription, API or local model for thinking and work.
 
 English is the default language for the avatar interface and voice. Spanish and Brazilian Portuguese remain selectable, and a saved workspace language choice is respected.
